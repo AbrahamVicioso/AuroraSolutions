@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-export default function PricingTable() {
+export default function PricingSection() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly")
 
   // Apply 20% discount for yearly billing
@@ -92,7 +92,7 @@ export default function PricingTable() {
   }
 
   return (
-    <div className="bg-blue-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Billing toggle */}
         <div className="flex justify-center items-center mb-10 space-x-4">
@@ -149,7 +149,7 @@ export default function PricingTable() {
                 key={plan.name}
                 className={cn(
                   "bg-white rounded-lg overflow-hidden border border-gray-200",
-                  plan.highlighted ? "bg-blue-500 text-white" : "",
+                  plan.highlighted ? "bg-red-500 text-white" : "",
                 )}
               >
                 <div className="p-6 flex flex-col h-full">
@@ -173,8 +173,8 @@ export default function PricingTable() {
                     className={cn(
                       "mt-2 mb-6 w-full py-2 px-4 border rounded-md text-sm font-medium",
                       plan.highlighted
-                        ? "border-white text-blue-500 bg-white hover:bg-blue-50"
-                        : "border-blue-500 text-blue-500 hover:bg-blue-50",
+                        ? "border-white text-red-500 bg-white hover:bg-blue-50"
+                        : "border-red-500 text-red-500 hover:bg-blue-50",
                     )}
                   >
                     {plan.buttonText}
@@ -213,7 +213,7 @@ export default function PricingTable() {
                         <Check
                           className={cn(
                             "h-4 w-4 mr-2 flex-shrink-0",
-                            plan.highlighted ? "text-white" : "text-blue-500",
+                            plan.highlighted ? "text-white" : "text-red-500",
                           )}
                         />
                         <span className={cn("text-sm", plan.highlighted ? "text-white" : "text-gray-700")}>
