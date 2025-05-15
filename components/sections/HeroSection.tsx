@@ -14,9 +14,11 @@ export default function HeroSection(){
                     Gestiona tus ventas, contabilidad, facturación y nómina de forma automática en un solo lugar, fácil y
                     rápido.
                 </p>
-                <Button className="bg-red-500 hover:bg-teal-600 text-white px-8 py-6 text-lg">
+                <a href="https://wa.me/+18094309959" className="text-red-500 hover:text-teal-600">
+                <Button  className="bg-red-500 hover:bg-teal-600 text-white px-8 py-6 text-lg">
                     Contactanos
                 </Button>
+                </a>
                 <div className="flex items-center mt-6">
                     <div className="flex">
                     {[1, 2, 3, 4, 5].map((star, i) => (

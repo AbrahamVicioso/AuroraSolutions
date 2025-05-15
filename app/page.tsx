@@ -1,16 +1,19 @@
-import type React from "react"
 import Image from "next/image"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Check, FileText, Cloud, Headphones, CheckCircle } from "lucide-react"
-import imageLogo from "../public/logo.png";
-import imageBanner from "../public/banner.jpg";
+import imageLogo from "../public/logo.png"
 import HeroSection from "@/components/sections/HeroSection"
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import PricingSection from "@/components/sections/PricingSection";
+import FeaturesSection from "@/components/sections/FeaturesSection"
+import PricingSection from "@/components/sections/PricingSection"
+
+import AboutSection from "@/components/sections/AboutSection"
 
 export default function Home() {
+  <div>
+    
+  </div>
   return (
+    
     <div className="flex flex-col min-h-screen">  
       <header className="border-b">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -25,6 +28,9 @@ export default function Home() {
               </a>
               <a href="#" className="text-gray-700 hover:text-teal-500 font-medium">
                 Contacto
+              </a>
+              <a href="#about" className="text-gray-700 hover:text-teal-500 font-medium">
+              Sobre nosotros
               </a>
             </nav>
           </div>
@@ -47,6 +53,10 @@ export default function Home() {
 
         {/*Priciong Section*/}
         <PricingSection/>
+
+        
+       <AboutSection/>
+       
 
         {/* Benefits Section */}
         <section className="py-16 px-4">
@@ -75,6 +85,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </main>
 
         {/* Testimonial Section */}
         <section className="py-16 px-4 bg-gray-50">
@@ -98,7 +109,7 @@ export default function Home() {
                   </div>
                   <div className="ml-auto">
                     <Image
-                      src="/placeholder.svg?height=80&width=80"
+                      src="@imagenes/imgen.png"
                       alt="Kelvin Acosta"
                       width={80}
                       height={80}
@@ -136,7 +147,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+
+      
 
       <footer className="bg-gray-800 text-white py-12 px-4">
         <div className="container mx-auto">
@@ -214,7 +226,7 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-teal-300">
+                  <a href="https://wa.me/+18094309959" className="hover:text-teal-300">
                     Contáctanos
                   </a>
                 </li>
@@ -250,9 +262,8 @@ function BenefitCard({
 function Logo({ white = false }: { white?: boolean }) {
   return (
     <div className={`flex items-center font-bold text-2xl ${white ? "text-white" : "text-red-600"}`}>
-      <img className="w-12" src={imageLogo.src}/>
+      <img className="w-12" src={imageLogo.src || "/placeholder.svg"}/>
       Aurora Solutions
     </div>
   )
 }
-
